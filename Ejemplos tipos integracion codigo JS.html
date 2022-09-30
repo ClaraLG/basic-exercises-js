@@ -1,0 +1,97 @@
+<!-- Para esta actividad se explican las diferentes formas de integrar código JS dentro de un archivo HTML -->
+
+
+<!-- Caso 1: Dentro de la cabecera o el footer (etiquetas <head> y <footer>) 
+    
+La elección de colocarlo dentro de la cabecera o del footer dependerá del tamaño del archivo js que 
+queremos cargar. Si es de tamaño reducido podemos colocarlo dentro de la cabecera o del footer. 
+Sin embargo, si es muy pesado o requiere de comunicación AJAX con un servidor externo, la mejor opción 
+es ponerlo en el footer para no retrasar la carga del resto de la web. También puede añadirse dentro 
+de la etiqueta <body>, entre el resto de líneas de código HTML.
+
+Hay que tener en cuenta que el navegador carga la página interpretando el código de arriba a abajo, 
+por lo que si añadimos demasiados componentes que tienen que cargar en la cabecera, antes de que 
+comience el código HTML, el contenido de la web tardará más en cargar, generando un impacto negativo 
+tanto en el usuario como en el SEO.
+
+Debe colocarse entre las etiquetas <script></script>, especificando que el script contiene 
+código en JavaScript (type =”text/javascript”)
+
+Ejemplo de script dentro de la cabecera:
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Ejemplos de integración del código JavaScript</title>
+        <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+        <script type="text/javascript">
+            //Aquí dentro colocaríamos todo el código
+        </script>
+    </head>
+
+    <body>
+
+    </body>
+
+    <!-- Si el código lo incluyésemos dentro del body o del footer, tendríamos el mismo
+    ejemplo pero con la etiqueta <script> y su contenido en una de las otras 2 secciones. -->
+
+    <footer>
+        
+    </footer>
+</html>
+
+
+<!-- Caso 2: En un documento .js externo
+
+Esta es la opción más recomendada cuando tenemos un código JavaScript demasiado largo o pesado. El 
+archivo externo de JavaScript se enlaza dentro del código HTML y se puede reutilizar en diversas páginas.
+
+Para este caso, se utiliza la etiqueta script especificando el tipo de script 
+(type=”text/javascript”) y la ruta y nombre del archivo de JavaScript externo (src).
+
+Ejemplo de un documento JavaScript enlazado: -->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Ejemplos de integración del código JavaScript</title>
+        <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+        <script type="text/javascript" src="ruta_archivo.js"></script>
+    </head>
+
+    <body>
+    </body>
+
+    <footer>  
+    </footer>
+</html>
+
+
+<!-- Caso 3: “Inline” (dentro de la propia etiqueta HTML afectada)
+
+Es el método menos utilizado, ya que ensucia el código HTML, afectando negativamente al SEO, y 
+reduce la velocidad de carga de la página web. Además, dificulta considerablemente el 
+mantenimiento del código.
+
+Ejemplo de código JavaScript “inline” -->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Ejemplos de integración del código JavaScript</title>
+        <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <h1>Esto es un ejemplo</h1>
+        <button type="button" class="btn btn-primary" onclick="ejecutarFuncion()">Botón</button>
+    </body>
+
+    <footer>
+        
+    </footer>
+</html>
