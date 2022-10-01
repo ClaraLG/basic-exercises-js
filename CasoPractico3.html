@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Caso Práctico 3</title>
+        <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    </head>
+
+    <!--Programa en el que se muestren todos las 3-uplas de números entre 1 y 9 (ambos incluidos)
+    y diferentes que sumen 15. Es decir, todas las 3-uplas (a, b, c) donde a+b+c=15 y a!=b, a!=c, b!=c.-->
+
+    <body>
+
+        <script>
+            //Declaración de las variables
+            var a, b, c;
+            //Bucles for para definir el valor de cada variable
+            for (let a = 1; a <= 9; a++) {
+                for (let b = 1; b <= 9; b++) {
+                    for (let c = 1; c <= 9; c++) {
+                        //Condición que tiene que cumplir cada variable para que se impriman en pantalla
+                        if (a != b && b != c && c != a && a + b + c == 15) {
+                            document.write("a = " + a + " | b = " + b + " | c = " + c +
+                            " ||| Suma: " + a + " + " + b + " + " + c + " = " + (a + b +c) + "<br />");
+                        }
+                    }
+                }
+            }
+            </script>
+
+    </body>
+</html>
