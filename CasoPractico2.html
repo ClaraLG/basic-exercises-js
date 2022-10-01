@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Caso Práctico 2</title>
+        <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    </head>
+
+    <body>
+
+        <script>
+
+            //Creamos la variable edad y pedimos al usuario que introduzca un número mediante window.promt()
+            //Para poder trabajar con la cifra introducida tendremos que transformar el tipo de dato
+
+            var edad=parseInt(window.prompt("Introduzca una edad: ",
+            "El número no puede ser menor que 0"));
+            
+            //En caso de que el usuario introduzca un número no válido o un valor no númerico
+            while (edad<0 || isNaN(edad)) {
+                edad=parseInt(window.prompt("Se ha producido un error. El valor introducido no es válido.\nIntroduzca su edad mediante un número entero MAYOR que 0: ",
+                "El número no puede ser menor que 0"));
+            }
+            //Segundo caso, edad entre 0 y 2 años. Bebé.
+            if(edad<=2) {
+                document.write("La edad introducida corresponde a un 'Bebe'.");
+            }
+            //Tercer caso, edad entre 2 y 12 años. Niño.
+            else if(edad>2 && edad<=12) {
+                document.write("La edad introducida corresponde a un 'Niño'.");
+            }
+            //Cuarto caso, edad entre 13 y 21 años. Adolescente.
+            else if(edad>=13 && edad<=21) {
+                document.write("La edad introducida corresponde a un 'Adolescente'.");
+            }
+            //Quinto caso, edad entre 22 y 35 años. Joven.
+            else if(edad>=22 && edad<=35) {
+                document.write("La edad introducida corresponde a un 'Joven'.");
+            }
+            //Sexto caso, edad entre 36 y 65 años. Adulto.
+            else if(edad>=35 && edad<=65) {
+                document.write("La edad introducida corresponde a un 'Adulto'.");
+            }
+            //Séptimo caso, edad mayor que 65. Jubilado.
+            else {
+                document.write("La edad introducida corresponde a un 'Jubilado'.");
+            }
+
+            
+        </script>
+
+        <!-- Botón que refresca la página para reiniciar el programa -->
+        <br />
+        <p>Refresque la página para volver a iniciar el programa.</p>
+        <input type="button" value="Refrescar" onclick="location.reload()"/>
+
+    </body>
+</html>
